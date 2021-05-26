@@ -19,4 +19,19 @@ public class TrainerSalaryTest {
     public void checkSalaryAmount() {
         assertEquals(4030, trainerSalary.calculateSalary());
     }
+
+    @Test
+    public void checkWeekDaySalary() {
+        assertEquals(4030, trainerSalary.weekdaySalary());
+    }
+
+    @Test
+    public void checkWeekEndSalary() {
+        assertEquals(0, trainerSalary.weekendSalary());
+    }
+
+    @Test
+    public void checkWeeklyWorkingHours() {
+        assertEquals(40, trainerSalary.totalHours());
+    }
 }

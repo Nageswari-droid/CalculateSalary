@@ -2,27 +2,26 @@ import java.util.*;
 
 public class EmployeeSalary {
     public static void main(String args[]) {
-
-        EmployeeSalary employeeSalary = new EmployeeSalary();
         ArrayList<Integer> dailyWorkingHours = new ArrayList<>();
+
+        System.out.println("Enter daily working hours : ");
         Scanner scanner = new Scanner(System.in);
 
-        for (int i = 0; i < 7; i++) {
-            int hours = scanner.nextInt();
-            if(employeeSalary.validateHours(hours)){
-                dailyWorkingHours.add(hours);
-            }
-            else{
-                System.out.println("Invalid hours value");
-            }
-        }
+        dailyWorkingHours = addWorkingHours(dailyWorkingHours, scanner);
 
         TrainerSalary trainerSalary = new TrainerSalary(dailyWorkingHours);
         System.out.println("Salary per week : " + trainerSalary.calculateSalary());
-
     }
 
-    public boolean validateHours(int hours){
-        return hours >= 0;
+    private static ArrayList<Integer> addWorkingHours(ArrayList<Integer> dailyWorkingHours, Scanner scanner) {
+        for (int i = 0; i < 7; i++) {
+            int hours = scanner.nextInt();
+            if (hours < 0) {
+                throw new IllegalArgumentException("Invalid hour value");
+            }
+            dailyWorkingHours.add(hours);
+        }
+        return dailyWorkingHours;
     }
+
 }
