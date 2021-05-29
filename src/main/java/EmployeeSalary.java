@@ -10,7 +10,7 @@ public class EmployeeSalary {
         dailyWorkingHours = addWorkingHours(dailyWorkingHours, scanner);
 
         TrainerSalary trainerSalary = new TrainerSalary(dailyWorkingHours);
-        System.out.println("Salary per week : " + trainerSalary.calculateSalary());
+        System.out.println(trainerSalary.calculateSalary());
     }
 
     private static ArrayList<Integer> addWorkingHours(ArrayList<Integer> dailyWorkingHours, Scanner scanner) {

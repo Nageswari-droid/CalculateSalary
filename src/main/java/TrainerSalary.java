@@ -6,8 +6,8 @@ public class TrainerSalary {
     private final int workingHourLimit = 8;
     private final int basicPay = 100;
     private final int extraPay = basicPay + 15;
-    private final int sundayBonus = 150;
-    private final int saturdayBonus = 125;
+    private final int sundayBonus = basicPay + (basicPay * (50 / 100));
+    private final int saturdayBonus = basicPay + (basicPay * (25 / 100));
     private final int weeklyWorkingHourLimit = 40;
     private final int extraPayForWeeklyWorkingHour = 125;
 
